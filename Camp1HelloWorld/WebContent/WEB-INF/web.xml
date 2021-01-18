@@ -4,12 +4,6 @@
 <servlet>  
 <servlet-name>sonoojaiswal</servlet-name>  
 <jsp-file>/welcome.jsp</jsp-file>  
-  
-<init-param>  
-<param-name>dname</param-name>  
-<param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>  
-</init-param>  
-  
 </servlet>  
   
 <servlet-mapping>  
@@ -17,4 +11,9 @@
 <url-pattern>/welcome</url-pattern>  
 </servlet-mapping>  
   
-</web-app>  
+<context-param>  
+<param-name>dname</param-name>  
+<param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>  
+</context-param>  
+  
+</web-app>
