@@ -14,8 +14,8 @@ out.print("Welcome "+name);
   
 pageContext.setAttribute("user",name,PageContext.SESSION_SCOPE);  
   
-<a href="second.jsp">second jsp page</a>  
   
 %>  
+<a href="second.jsp">second jsp page</a>  
 </body>
 </html>

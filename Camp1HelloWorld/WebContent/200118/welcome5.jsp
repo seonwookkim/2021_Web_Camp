@@ -13,7 +13,7 @@
   
 	session.setAttribute("user",name);  
   
-	<a href="second.jsp">second jsp page</a>  
 %>  
+	<a href="second.jsp">second jsp page</a>  
 </body>
 </html>
