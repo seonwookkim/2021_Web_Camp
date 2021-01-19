@@ -8,7 +8,7 @@
 </head>
 <body>
   
-<%@ page info="composed by Sonoo Jaiswal" %>  
+<%@ page contentType=application/msword %>  
 Today is: <%= new java.util.Date() %>  
   
 </body>
