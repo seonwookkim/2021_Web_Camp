@@ -8,8 +8,8 @@
 </head>
 <body>
   
-<%@ page contentType=application/msword %>  
-Today is: <%= new java.util.Date() %>  
+<%@ page import="java.util.Date" %>  
+Today is: <%= new Date() %>  
   
 </body>
 </html>
