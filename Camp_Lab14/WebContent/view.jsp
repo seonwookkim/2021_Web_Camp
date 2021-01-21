@@ -7,36 +7,83 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>VIEW</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<style>
+h1 {
+	text-align: center;
+}
+
+body {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+</style>
 </head>
 <body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="introduce.jsp">SEON-WOOK KIM</a>
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="about.jsp">About</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="data.jsp">Data</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="index.jsp">Books</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div class="middle">
+		<h1>VIEW</h1>
 
-	<%
-		String seq = request.getParameter("id");
-		int id = Integer.parseInt(seq);
-		BoardDao BoardDAO = new BoardDao();
-		Board b = BoardDAO.view(id);
-	%>
+		<form method="post">
+			<%
+				String seq = request.getParameter("id");
+			int id = Integer.parseInt(seq);
+			BoardDao BoardDAO = new BoardDao();
+			Board b = BoardDAO.view(id);
+			%>
+			<div class="form-horizontal">
 
-	<h1>VIEW</h1>
-	<table>
-		<tr>
-			<td>TITLE:</td>
-			<td><%=b.getTitle()%></td>
-		</tr>
-		<tr>
-			<td>AUTHOR:</td>
-			<td><%=b.getWriter()%></td>
-		</tr>
-		<tr>
-			<td>CONTENT:</td>
-			<td><a><%=b.getContent()%></a></td>
-		</tr>
-		<tr>
-			<td colspan="2"><a href="editform.jsp?id=<%=b.getSeq()%>">EDIT</a></td>
-		</tr>
-		<tr>
-			<td><input type="button" value="CANCLE" onclick="history.back()" /></td>
-		</tr>
-	</table>
+				<div class="form-group row">
+					<label class="col-form-label col-sm-2" for="Title">TITLE</label>
+					<div class="col-sm-8">
+						<input readonly class="form-control" id="Title"
+							value="<%=b.getTitle()%>" />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-sm-2" for="Author">AUTHOR</label>
+					<div class="col-sm-7">
+						<input readonly class="form-control" id="Author"
+							value="<%=b.getWriter()%>" />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-sm-2" for="Comments">COMMENTS</label>
+					<div class="col-sm-10">
+						<textarea readonly class="form-control" cols="20" id="Comments"
+							maxlength="32000" rows="7"><%=b.getContent()%></textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-form-label col-sm-2"></label>
+				<div class="col-sm-10">
+					<a href="index.jsp" class="btn btn-outline-dark cancel">Back</a>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<footer>
+		<p>&copy; 2021 - SEONWOOK KIM</p>
+	</footer>
 </body>
 </html>

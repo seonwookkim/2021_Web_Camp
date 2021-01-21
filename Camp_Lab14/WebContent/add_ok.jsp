@@ -22,7 +22,7 @@
 		
 	<script>
 		alert('<%=msg%>');
-		location.href='list.jsp';
+		location.href='index.jsp';
 	</script>
 </body>
 </html>

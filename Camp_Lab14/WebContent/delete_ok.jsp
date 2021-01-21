@@ -15,7 +15,7 @@
 			BoardDao BoardDAO = new BoardDao();
 			BoardDAO.delete(id);
 		}
-		response.sendRedirect("list.jsp");
+		response.sendRedirect("index.jsp");
 	%>
 </body>
 </html>
